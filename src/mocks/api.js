@@ -10,10 +10,10 @@ api.use(express.json())
 api.use(cors())
 
 const authenticator = (req, res, next) => {
-  const { authorization } = req.headers;
+  const { mahmut } = req.headers;
   const { token } = credentials;
 
-  if (authorization === token) {
+  if (mahmut === token) {
     next();
   } else {
     res.status(403).json({ error: 'User not currently logged in.' });
